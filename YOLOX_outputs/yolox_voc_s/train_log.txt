@@ -1,0 +1,148 @@
+2022-05-18 16:23:03.930 | INFO     | yolox.core.trainer:before_train:130 - args: Namespace(batch_size=64, cache=False, ckpt='yolox_s.pth.tar', devices=0, dist_backend='nccl', dist_url=None, exp_file='exps/example/yolox_voc/yolox_voc_s.py', experiment_name='yolox_voc_s', fp16=False, logger='tensorboard', machine_rank=0, name=None, num_machines=1, occupy=False, opts=[], resume=False, start_epoch=None)
+2022-05-18 16:23:03.936 | INFO     | yolox.core.trainer:before_train:131 - exp value:
+╒═══════════════════╤════════════════════════════╕
+│ keys              │ values                     │
+╞═══════════════════╪════════════════════════════╡
+│ seed              │ None                       │
+├───────────────────┼────────────────────────────┤
+│ output_dir        │ './YOLOX_outputs'          │
+├───────────────────┼────────────────────────────┤
+│ print_interval    │ 10                         │
+├───────────────────┼────────────────────────────┤
+│ eval_interval     │ 10                         │
+├───────────────────┼────────────────────────────┤
+│ num_classes       │ 20                         │
+├───────────────────┼────────────────────────────┤
+│ depth             │ 0.33                       │
+├───────────────────┼────────────────────────────┤
+│ width             │ 0.5                        │
+├───────────────────┼────────────────────────────┤
+│ act               │ 'silu'                     │
+├───────────────────┼────────────────────────────┤
+│ data_num_workers  │ 4                          │
+├───────────────────┼────────────────────────────┤
+│ input_size        │ (640, 640)                 │
+├───────────────────┼────────────────────────────┤
+│ multiscale_range  │ 5                          │
+├───────────────────┼────────────────────────────┤
+│ data_dir          │ None                       │
+├───────────────────┼────────────────────────────┤
+│ train_ann         │ 'instances_train2017.json' │
+├───────────────────┼────────────────────────────┤
+│ val_ann           │ 'instances_val2017.json'   │
+├───────────────────┼────────────────────────────┤
+│ test_ann          │ 'instances_test2017.json'  │
+├───────────────────┼────────────────────────────┤
+│ mosaic_prob       │ 1.0                        │
+├───────────────────┼────────────────────────────┤
+│ mixup_prob        │ 1.0                        │
+├───────────────────┼────────────────────────────┤
+│ hsv_prob          │ 1.0                        │
+├───────────────────┼────────────────────────────┤
+│ flip_prob         │ 0.5                        │
+├───────────────────┼────────────────────────────┤
+│ degrees           │ 10.0                       │
+├───────────────────┼────────────────────────────┤
+│ translate         │ 0.1                        │
+├───────────────────┼────────────────────────────┤
+│ mosaic_scale      │ (0.1, 2)                   │
+├───────────────────┼────────────────────────────┤
+│ enable_mixup      │ True                       │
+├───────────────────┼────────────────────────────┤
+│ mixup_scale       │ (0.5, 1.5)                 │
+├───────────────────┼────────────────────────────┤
+│ shear             │ 2.0                        │
+├───────────────────┼────────────────────────────┤
+│ warmup_epochs     │ 1                          │
+├───────────────────┼────────────────────────────┤
+│ max_epoch         │ 300                        │
+├───────────────────┼────────────────────────────┤
+│ warmup_lr         │ 0                          │
+├───────────────────┼────────────────────────────┤
+│ min_lr_ratio      │ 0.05                       │
+├───────────────────┼────────────────────────────┤
+│ basic_lr_per_img  │ 0.00015625                 │
+├───────────────────┼────────────────────────────┤
+│ scheduler         │ 'yoloxwarmcos'             │
+├───────────────────┼────────────────────────────┤
+│ no_aug_epochs     │ 15                         │
+├───────────────────┼────────────────────────────┤
+│ ema               │ True                       │
+├───────────────────┼────────────────────────────┤
+│ weight_decay      │ 0.0005                     │
+├───────────────────┼────────────────────────────┤
+│ momentum          │ 0.9                        │
+├───────────────────┼────────────────────────────┤
+│ save_history_ckpt │ True                       │
+├───────────────────┼────────────────────────────┤
+│ exp_name          │ 'yolox_voc_s'              │
+├───────────────────┼────────────────────────────┤
+│ test_size         │ (640, 640)                 │
+├───────────────────┼────────────────────────────┤
+│ test_conf         │ 0.01                       │
+├───────────────────┼────────────────────────────┤
+│ nmsthre           │ 0.65                       │
+╘═══════════════════╧════════════════════════════╛
+2022-05-18 16:23:04.212 | INFO     | yolox.core.trainer:before_train:137 - Model Summary: Params: 8.95M, Gflops: 26.68
+2022-05-18 16:23:06.798 | INFO     | yolox.core.trainer:resume_train:308 - loading checkpoint for fine tuning
+2022-05-18 16:23:06.799 | ERROR    | yolox.core.launch:launch:98 - An error has been caught in function 'launch', process 'MainProcess' (13984), thread 'MainThread' (10316):
+Traceback (most recent call last):
+
+  File "tools/train.py", line 140, in <module>
+    args=(exp, args),
+          │    └ Namespace(batch_size=64, cache=False, ckpt='yolox_s.pth.tar', devices=0, dist_backend='nccl', dist_url=None, exp_file='exps/e...
+          └ ╒═══════════════════╤════════════════════════════════════════════════════════════════════════════════════════════════════════...
+
+> File "c:\arthur\crouse\edge ai\fianl\code\yolox\yolox\core\launch.py", line 98, in launch
+    main_func(*args)
+    │          └ (╒═══════════════════╤═══════════════════════════════════════════════════════════════════════════════════════════════════════...
+    └ <function main at 0x000002567234AD38>
+
+  File "tools/train.py", line 117, in main
+    trainer.train()
+    │       └ <function Trainer.train at 0x000002567FF88948>
+    └ <yolox.core.trainer.Trainer object at 0x0000025606FF9C48>
+
+  File "c:\arthur\crouse\edge ai\fianl\code\yolox\yolox\core\trainer.py", line 74, in train
+    self.before_train()
+    │    └ <function Trainer.before_train at 0x0000025606FF3A68>
+    └ <yolox.core.trainer.Trainer object at 0x0000025606FF9C48>
+
+  File "c:\arthur\crouse\edge ai\fianl\code\yolox\yolox\core\trainer.py", line 145, in before_train
+    model = self.resume_train(model)
+            │    │            └ YOLOX(
+            │    │                (backbone): YOLOPAFPN(
+            │    │                  (backbone): CSPDarknet(
+            │    │                    (stem): Focus(
+            │    │                      (conv): BaseConv(
+            │    │                        (conv): ...
+            │    └ <function Trainer.resume_train at 0x0000025606FF3E58>
+            └ <yolox.core.trainer.Trainer object at 0x0000025606FF9C48>
+
+  File "c:\arthur\crouse\edge ai\fianl\code\yolox\yolox\core\trainer.py", line 310, in resume_train
+    ckpt = torch.load(ckpt_file, map_location=self.device)["model"]
+           │     │    │                       │    └ 'cuda:0'
+           │     │    │                       └ <yolox.core.trainer.Trainer object at 0x0000025606FF9C48>
+           │     │    └ 'yolox_s.pth.tar'
+           │     └ <function load at 0x000002567E6B74C8>
+           └ <module 'torch' from 'C:\\Users\\zxb8902\\anaconda3\\envs\\Yolox_3.7\\lib\\site-packages\\torch\\__init__.py'>
+
+  File "C:\Users\zxb8902\anaconda3\envs\Yolox_3.7\lib\site-packages\torch\serialization.py", line 579, in load
+    with _open_file_like(f, 'rb') as opened_file:
+         │               └ 'yolox_s.pth.tar'
+         └ <function _open_file_like at 0x000002567E6B28B8>
+
+  File "C:\Users\zxb8902\anaconda3\envs\Yolox_3.7\lib\site-packages\torch\serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           │          │               └ 'rb'
+           │          └ 'yolox_s.pth.tar'
+           └ <class 'torch.serialization._open_file'>
+
+  File "C:\Users\zxb8902\anaconda3\envs\Yolox_3.7\lib\site-packages\torch\serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+          │           │                   │     └ 'rb'
+          │           │                   └ 'yolox_s.pth.tar'
+          │           └ <torch.serialization._open_file object at 0x00000256070246C8>
+          └ <class 'torch.serialization._open_file'>
+
+FileNotFoundError: [Errno 2] No such file or directory: 'yolox_s.pth.tar'
